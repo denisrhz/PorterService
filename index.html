@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/089660f746.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <title>PorterService</title>
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="contacts">
             <div class="container">
                 <div class="contacts__inner">
@@ -54,20 +55,26 @@
             <div class="container">
                 <div class="menu__inner">
                     <div class="menu__logo">
-                        <img src="assets/images/logo.png" alt="">
+                        <img src="assets/images/logo.png" alt="" data-scroll="#about">
                     </div>
-                    <nav class="nav">
-                        <a class="nav__link" href="#">О нас</a>
-                        <a class="nav__link" href="#">Услуги</a>
-                        <a class="nav__link" href="#">Отзывы</a>
-                        <a class="nav__link" href="#">Контакты</a>
+                    <nav class="nav" id="nav">
+                        <a class="nav__link" id="nav__link" href="#" data-scroll="#about">О нас</a>
+                        <a class="nav__link" id="nav__link" href="#" data-scroll="#service">Услуги</a>
+                        <a class="nav__link" id="nav__link" href="#" data-scroll="#reviews">Отзывы</a>
+                        <a class="nav__link" id="nav__link" href="#" data-scroll="#footer">Контакты</a>
                     </nav>
+
+                    <button class="nav-toggle" id="nav_toggle" type="button">
+                        <span class="nav-toggle__item">Menu</span>
+                    </button>
+
                 </div>
             </div>
         </div>
     </header>
 
-<section class="about">
+<!-- About -->
+<section class="about" id="about">
     <div class="about__left">
         <div class="about__left__inner">
             <div class="about__title">
@@ -90,7 +97,7 @@
         </div>
 </section>
 
-<!-- statistics -->
+<!-- Statistics -->
 <div class="statistics">
     <div class="container">
         <div class="stat">
@@ -118,8 +125,8 @@
     </div>
 </div>
 
-<!-- service -->
-<section class="section">
+<!-- Service -->
+<section class="section" id="service">
     <div class="container">
         <div class="section__header">
             <h2 class="section__title">Услуги</h2>
@@ -282,8 +289,8 @@
     </div>
 </section>
 
-<!-- reviews -->
-<div class="section">
+<!-- Reviews -->
+<div class="section" id="reviews">
     <div class="container">
         <div class="section__header">
             <h2 class="section__title">Отзывы</h2>
@@ -298,13 +305,22 @@
                         <div class="reviews__author">Jon Doe</div>
                     </div>
                 </div>
+
+                <div>
+                    <div class="reviews__item">
+                        <img class="reviews__photo" src="assets/images/avatar.png" alt="">
+                        <div class="reviews__text">“Заказала грузоперевозку, перевозили пианино с адреса на адрес. Приехали крепкие, слаженные ребята с ремнями, Перевезли все! Все понравилось. Не поцарапали, ничего не разбили, сделали все быстро. Ребята приехали чистые, вежливо общались.  ”</div>
+                        <div class="reviews__author">Jon Doe</div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
     </div>
 </div>
 
-<!-- message -->
+<!-- Message -->
 <div class="message">
     <div class="container">
         <div class="message__inner">
@@ -314,8 +330,8 @@
     </div>
 </div>
 
-<!-- footer -->
-<footer class="footer">
+<!-- Footer -->
+<footer class="footer" id="footer">
     <div class="container">
         <div class="footer__inner">
             <div class="footer__col">
@@ -372,10 +388,17 @@
                 </div>
             </div>
         </div>
+
+        <div class="copyright">
+            © 2020 This is copyright <span>Denisrhz </span>
+        </div>
+
     </div>
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="assets/js/app.js"></script>
 
 </body>
 </html>

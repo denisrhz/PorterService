@@ -75,6 +75,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 /* Contacts */
 .contacts {
+    margin-bottom: 90px;
     background-color: #1e2126;
 }
 
@@ -121,7 +122,22 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .menu {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
     background-color: #f8f8f8;
+    z-index: 1000;
+}
+
+.menu.fixed {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .menu__inner {
@@ -156,8 +172,87 @@ body, p, h1, h2, h3, h4, h5, h6 {
     color: #ffcd00;
 }
 
-/* About */
+.nav__link.active {
+    color: #ffcd00;
+}
 
+/* nav toggle */
+.nav-toggle {
+    width: 40px;
+    padding: 10px 0;
+    display: none;
+
+    font-size: 0;
+    color: transparent;
+
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: 34px;
+    right: 25px;
+    z-index: 1;
+}
+
+.nav-toggle:focus {
+    outline: 0;
+}
+
+.nav-toggle__item {
+    display: block;
+    width: 100%;
+    height: 4px;
+
+    background-color:#1e2126;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    transition: all .2s linear;
+}
+
+.nav-toggle.active .nav-toggle__item {
+    background: none;
+}
+
+.nav-toggle__item:before, .nav-toggle__item:after {
+    content: "";
+    width: 100%;
+    height: 4px;
+
+    background-color: #1e2126;
+
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+    transition: all .2s linear;
+}
+
+.nav-toggle__item:before {
+    top: -15px;
+}
+
+.nav-toggle__item:after {
+    bottom: -15px;
+}
+
+.nav-toggle.active .nav-toggle__item:before {
+    transform-origin: left top;
+    transform: rotate(45deg) translate3d(0px, 2px, 0);
+}
+
+.nav-toggle.active .nav-toggle__item:after {
+    transform-origin: left bottom;
+    transform: rotate(-45deg) translate3d(0px, -2px, 0);
+}
+
+/* About */
 .about {
     overflow: hidden;
     background: #1e2126;
@@ -394,7 +489,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .reviews .slick-slider {
-    padding: 0 110px;
+    padding: 0 60px;
 }
 
 .reviews__item {
@@ -427,6 +522,47 @@ body, p, h1, h2, h3, h4, h5, h6 {
 .reviews__author {
     font-family: 'Kaushan Script' cursive;
     font-size: 24px;
+}
+
+.slick-arrow {
+    display: block;
+    font-size: 0;
+    color: transparent;
+
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.slick-arrow:focus {
+    outline: 0;
+}
+
+.slick-arrow:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    border-top: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+}
+
+.slick-prev {
+    left: 0;
+
+    transform: rotate(-45deg);
+}
+
+.slick-next {
+    right: 0;
+
+    transform: rotate(135deg);
 }
 
 /* Message */
@@ -516,13 +652,14 @@ body, p, h1, h2, h3, h4, h5, h6 {
 .footer {
     overflow: hidden;
     background: #1e2126;
-    padding: 100px 0;
+    padding-top: 100px;
 }
 
 .footer__inner {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px;
+    padding-bottom: 100px;
 }
 
 .footer__col {
@@ -591,6 +728,21 @@ body, p, h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
 }
 
+/* Copyright */
+.copyright {
+    padding: 20px 0;
+
+    border-top: 1px solid #292c31;
+
+    font-size: 14px;
+    color: #808080;
+    text-align: center;
+}
+
+.copyright span {
+    color: #ffffffe6;
+}
+
 @media (max-width: 990px) {
 
     /* About */
@@ -634,25 +786,51 @@ body, p, h1, h2, h3, h4, h5, h6 {
     }
 
     /* reviews */
-    .reviews .slick-slider {
-        padding: 0 60px;
-    }
     .reviews__photo {
-        width: 150px;
-        height: 150px;
+        position: static;
+        margin: 0 auto 20px;
     }
 
     .reviews__item {
-        padding-left: 175px;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .reviews__text {
+        font-size: 20px;
     }
 }
 
 @media (max-width: 690px) {
 
-    /* Menu */
-    .menu {
+    .nav {
         display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+    background-color: #1e2126;
     }
+
+    .nav.active {
+        display: block;
+    }
+
+    .nav__link {
+        font-size: 20px;
+        color: #f8f8f8;
+        text-align: center;
+        display: block;
+        margin: 0;
+        padding: 10px 20px;
+    }
+
+
+    .nav-toggle {
+        display: block;
+    }
+
 
     /* About */
     .about__left {
@@ -678,16 +856,6 @@ body, p, h1, h2, h3, h4, h5, h6 {
     }
 
     /* reviews */
-    .reviews__photo {
-        position: static;
-        margin: 0 auto 20px;
-    }
-
-    .reviews__item {
-        padding-left: 0;
-        text-align: center;
-    }
-
     .reviews__text {
         font-size: 16px;
     }
