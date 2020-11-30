@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.png') }}" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/089660f746.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>PorterService</title>
+    {% endif %}
+</head>
+<body>
+
+<header class="header" id="header">
+    <div class="contacts">
+        <div class="container">
+            <div class="contacts__inner">
+
+                <div class="contacts__item contacts__item--email">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contacts__item__suptext">
+                        porter.service@gmail.com
+                    </div>
+                    <div class="contacts__item__text">
+                        Отвечаем мгновенно
+                    </div>
+                </div>
+
+                <div class="contacts__item contacts__item--phone">
+                    <i class="fas fa-phone fa-flip-horizontal"></i>
+                    <div class="contacts__item__suptext">
+                        8-(999)-999-99-99
+                    </div>
+                    <div class="contacts__item__text">
+                        Работаем с 10 до 23
+                    </div>
+                </div>
+
+                <div class="contacts__item--social">
+                        <a class="contacts__item--social" href="#" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% block content %}
+
+{% endblock %}
+
+<!-- Footer -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <div class="footer__col">
+                <h2 class="footer__logo">Компания<span>.</span></h2>
+                <p class="footer__text">На протяжении 5 лет мы обслуживаем склады, производства, торговые сети, мероприятия и любые другие проекты.</p>
+            </div>
+
+            <div class="footer__col">
+                <h2 class="footer__title">Услуги</h2>
+                <ul class="service__list">
+                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Грузоперевозки</a></li>
+                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Грузчики</a></li>
+                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Спецтехника</a></li>
+                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Рабочий персонал</a></li>
+                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Демонтаж</a></li>
+                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Вывоз Мусора</a></li>
+                </ul>
+            </div>
+        
+        
+            <div class="footer__col">
+                <h2 class="footer__title">Контакты</h2>
+                <div class="footer__contacts">
+                    <ul>
+                        <li class="footer__contacts__li">
+                            <i class="icon fa fa-map-marker"></i>
+                            203 Fake St. Mountain View, San Francisco, California, USA
+                        </li>
+                        <li class="footer__contacts__li">
+                            <i class="icon fa fa-phone"></i>
+                            +2 392 3929 210
+                        </li>
+                        <li class="footer__contacts__li">
+                            <i class="icon fa fa-paper-plane"></i>
+                            info@yourdomain.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__col">
+                <h2 class="footer__title">Часы работы</h2>
+                <div class="footer__hours">
+                    <h4 class="footer__hours__title">Opening Days:</h4>
+                    <p class="footer__hours__text">
+                        <span>Monday – Friday : 9am to 20 pm</span>
+                        <span>Saturday : 9am to 17 pm</span>
+                    </p>
+                    <h4 class="footer__hours__title">Vacations:</h4>
+                    <p class="footer__hours__text">
+                        <span>All Sunday Days</span>
+                        <span>All Official Holidays</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            © 2020 This is copyright <span>Denisrhz </span>
+        </div>
+
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="{{ url_for('static', filename = 'app.js') }}"></script>
+
+</body>
+</html>
