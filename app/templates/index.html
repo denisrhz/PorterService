@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.png') }}" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/089660f746.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -55,7 +56,7 @@
             <div class="container">
                 <div class="menu__inner">
                     <div class="menu__logo">
-                        <img src="assets/images/logo.png" alt="" data-scroll="#about">
+                        <img src="{{ url_for('static', filename = 'images/logo.png') }}" alt="" data-scroll="#about">
                     </div>
                     <nav class="nav" id="nav">
                         <a class="nav__link" id="nav__link" href="#" data-scroll="#about">О нас</a>
@@ -93,7 +94,7 @@
         </div>
     </div>
         <div class="about__right">
-            <img class="about__image" src="assets/images/00000000361.png" alt="">
+            <img class="about__image" src="{{ url_for('static', filename = 'images/about.png') }}" alt="">
         </div>
 </section>
 
@@ -136,7 +137,7 @@
             <div class="service__item">
                 <div class="service__header">
                     <a href="#">
-                        <img class="service__photo" src="assets/images/blog/1.jpg" alt="">
+                        <img class="service__photo" src="{{ url_for('static', filename = 'images/service/1.jpg') }}" alt="">
                     </a>
                     <div class="service__date">
                         450 <i class="fas fa-ruble-sign"></i>
@@ -161,7 +162,7 @@
             <div class="service__item">
                 <div class="service__header">
                     <a href="#">
-                        <img class="service__photo" src="assets/images/blog/1.jpg" alt="">
+                        <img class="service__photo" src="{{ url_for('static', filename = 'images/service/2.jpg') }}" alt="">
                     </a>
                     <div class="service__date">
                         450 <i class="fas fa-ruble-sign"></i>
@@ -186,7 +187,7 @@
             <div class="service__item">
                 <div class="service__header">
                     <a href="#">
-                        <img class="service__photo" src="assets/images/blog/1.jpg" alt="">
+                        <img class="service__photo" src="{{ url_for('static', filename = 'images/service/3.jpg') }}" alt="">
                     </a>
                     <div class="service__date">
                         450 <i class="fas fa-ruble-sign"></i>
@@ -207,84 +208,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="service__item">
-                <div class="service__header">
-                    <a href="#">
-                        <img class="service__photo" src="assets/images/blog/1.jpg" alt="">
-                    </a>
-                    <div class="service__date">
-                        450 <i class="fas fa-ruble-sign"></i>
-                    </div>
-                </div>
-                <div class="service__content">
-                    <span class="service-stat__item">
-                        Грузоперевозки
-                    </span>
-                    <div class="service__text">Грузовое такси; Газели (3,5м-4м-5м-6м); Рефрежиратор, Камаз, Зил, Самосвал; Перевозка щебня, Зерна, Песка и т д.
-                    </div>
-                </div>
-                <div class="service__footer">
-                    <div class="service-stat">
-                        <div class="service__title">
-                            <a href="#">Узнать стоимость</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service__item">
-                <div class="service__header">
-                    <a href="#">
-                        <img class="service__photo" src="assets/images/blog/1.jpg" alt="">
-                    </a>
-                    <div class="service__date">
-                        450 <i class="fas fa-ruble-sign"></i>
-                    </div>
-                </div>
-                <div class="service__content">
-                    <span class="service-stat__item">
-                        Грузоперевозки
-                    </span>
-                    <div class="service__text">Грузовое такси; Газели (3,5м-4м-5м-6м); Рефрежиратор, Камаз, Зил, Самосвал; Перевозка щебня, Зерна, Песка и т д.
-                    </div>
-                </div>
-                <div class="service__footer">
-                    <div class="service-stat">
-                        <div class="service__title">
-                            <a href="#">Узнать стоимость</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service__item">
-                <div class="service__header">
-                    <a href="#">
-                        <img class="service__photo" src="assets/images/blog/1.jpg" alt="">
-                    </a>
-                    <div class="service__date">
-                        450 <i class="fas fa-ruble-sign"></i>
-                    </div>
-                </div>
-                <div class="service__content">
-                    <span class="service-stat__item">
-                        Грузоперевозки
-                    </span>
-                    <div class="service__text">Грузовое такси; Газели (3,5м-4м-5м-6м); Рефрежиратор, Камаз, Зил, Самосвал; Перевозка щебня, Зерна, Песка и т д.
-                    </div>
-                </div>
-                <div class="service__footer">
-                    <div class="service-stat">
-                        <div class="service__title">
-                            <a href="#">Узнать стоимость</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            
-
         </div>
     </div>
 </section>
@@ -300,7 +223,7 @@
             <div data-slider>
                 <div>
                     <div class="reviews__item">
-                        <img class="reviews__photo" src="assets/images/avatar.png" alt="">
+                        <img class="reviews__photo" src="{{ url_for('static', filename = 'images/reviews/1.png') }}" alt="">
                         <div class="reviews__text">“Заказала грузоперевозку, перевозили пианино с адреса на адрес. Приехали крепкие, слаженные ребята с ремнями, Перевезли все! Все понравилось. Не поцарапали, ничего не разбили, сделали все быстро. Ребята приехали чистые, вежливо общались.  ”</div>
                         <div class="reviews__author">Jon Doe</div>
                     </div>
@@ -308,7 +231,7 @@
 
                 <div>
                     <div class="reviews__item">
-                        <img class="reviews__photo" src="assets/images/avatar.png" alt="">
+                        <img class="reviews__photo" src="{{ url_for('static', filename = 'images/reviews/1.png') }}" alt="">
                         <div class="reviews__text">“Заказала грузоперевозку, перевозили пианино с адреса на адрес. Приехали крепкие, слаженные ребята с ремнями, Перевезли все! Все понравилось. Не поцарапали, ничего не разбили, сделали все быстро. Ребята приехали чистые, вежливо общались.  ”</div>
                         <div class="reviews__author">Jon Doe</div>
                     </div>
@@ -398,7 +321,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="{{ url_for('static', filename = 'app.js') }}"></script>
 
 </body>
 </html>

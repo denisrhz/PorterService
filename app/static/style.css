@@ -352,7 +352,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 /* Statistics */
 .statistics {
-    background: url(../images/banner-bg.jpg) no-repeat scroll center center;
+    background: url(images/statistics.jpg) no-repeat scroll center center;
     background-size: cover;
     position: relative;
     z-index: 3;
@@ -567,7 +567,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 /* Message */
 .message {
-    background: url(../images/banner-bg.jpg) no-repeat scroll center center;
+    background: url(images/statistics.jpg) no-repeat scroll center center;
     background-size: cover;
     position: relative;
     z-index: 3;
