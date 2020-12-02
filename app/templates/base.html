@@ -73,12 +73,9 @@
             <div class="footer__col">
                 <h2 class="footer__title">Услуги</h2>
                 <ul class="service__list">
-                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Грузоперевозки</a></li>
-                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Грузчики</a></li>
-                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Спецтехника</a></li>
-                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Рабочий персонал</a></li>
-                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Демонтаж</a></li>
-                    <li><a href="#"><i class="fa fa-check" aria-hidden="true"></i>Вывоз Мусора</a></li>
+                    {% for service in services %}
+                        <li><a href="{{ url_for('message', service=service.id) }}"><i class="fa fa-check" aria-hidden="true"></i>{{ service.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         
