@@ -75,7 +75,6 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 /* Contacts */
 .contacts {
-    margin-bottom: 90px;
     background-color: #1e2126;
 }
 
@@ -254,6 +253,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 /* About */
 .about {
+    margin-top: 90px;
     overflow: hidden;
     background: #1e2126;
 }

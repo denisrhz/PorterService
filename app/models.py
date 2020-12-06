@@ -12,7 +12,7 @@ class Service(db.Model):
     messages = db.relationship('Message', backref='service', lazy='dynamic')
 
     def __repr__(self):
-        return 'Услуга: {}'.format(self.title)
+        return '{}'.format(self.title)
 
 class City(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -21,7 +21,7 @@ class City(db.Model):
     messages = db.relationship('Message', backref='city', lazy='dynamic')
 
     def __repr__(self):
-        return 'Город: {}'.format(self.name)
+        return '{}'.format(self.name)
 
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -34,4 +34,4 @@ class Message(db.Model):
     city_id = db.Column(db.Integer, db.ForeignKey('city.id'))
 
     def __repr__(self):
-        return 'Телефон: {}, Имя: {}'.format(self.phone, self.author)
+        return '{}: {}'.format(self.author, self.phone)

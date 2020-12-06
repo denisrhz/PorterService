@@ -3,39 +3,41 @@
 {% block content %}
 <section class="section">
     <div class="container">
-        <h1>Узнать стоимость</h1>
-        <form action="" method="post" novalidate>
-            {{ form.hidden_tag() }}
-            <p>
-                {{ form.author.label }}<br>
-                {{ form.author(size=64) }}
-                {% for error in form.author.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>
-                {{ form.phone.label }}<br>
-                {{ form.phone(size=11) }}
-                {% for error in form.phone.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>
-                {{ form.city.label }}<br>
-                {{ form.city() }}
-                {% for error in form.city.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>
-                {{ form.body.label }}<br>
-                {{ form.body(size=256) }}
-                {% for error in form.body.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>{{ form.submit() }}</p>
-        </form>
+        <div class="form__inner">
+            <h1 class="form__title">Узнать стоимость</h1>
+            <form class="form__form" action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <p class="form__author">
+                    {{ form.author.label }}<br>
+                    {{ form.author(size=20, placeholder="Андрей") }}
+                    {% for error in form.author.errors %}
+                    <div style="color: red;">{{ error }}</div>
+                    {% endfor %}
+                </p>
+                <p class="form__phone">
+                    {{ form.phone.label }}<br>
+                    {{ form.phone(size=10, placeholder="8915912XXXX") }}
+                    {% for error in form.phone.errors %}
+                    <div style="color: #ffcd00;">{{ error }}</div>
+                    {% endfor %}
+                </p>
+                <p class="form__city">
+                    {{ form.city.label }}<br>
+                    {{ form.city() }}
+                    {% for error in form.city.errors %}
+                    <div style="color: #ffcd00;">{{ error }}</div>
+                    {% endfor %}
+                </p>
+                <p class="form__body">
+                    {{ form.body.label }}<br>
+                    {{ form.body(size=256 , placeholder="") }}
+                    {% for error in form.body.errors %}
+                    <div style="color: #ffcd00;">{{ error }}</div>
+                    {% endfor %}
+                </p>
+                <p class="form__submit">{{ form.submit() }}</p>
+            </form>
+        </div>
     </div>
 </section>
 {% endblock %}
