@@ -1,9 +1,10 @@
 from flask import render_template, flash, redirect, url_for
 from app import app, db
 from app.forms import MessageForm
-from app.models import Service, Message
+from app.models import Service, Message, City
 
 @app.route('/')
+@app.route('/index')
 def index():
     services = Service.query.all()
     return render_template('index.html', services=services)
@@ -11,6 +12,7 @@ def index():
 @app.route('/message/<service>', methods=['GET', 'POST'])
 def message(service):
     form = MessageForm()
+    form.city.choices = [(record.id, record.name) for record in City.query.all()]
     if form.validate_on_submit():
         message = Message(author=form.author.data,
                             phone=form.phone.data,

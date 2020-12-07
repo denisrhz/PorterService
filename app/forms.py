@@ -8,11 +8,9 @@ import re
 
 class MessageForm(FlaskForm):
     author = StringField('Имя:', validators=[DataRequired(), Length(min=0, max=40, message="Поле должно содержать не более 40 символов")])
-    phone = StringField('Номер телефона:', validators=[DataRequired()])
-    city = SelectField('Город', validators=[DataRequired()], choices=[
-        (record.id, record.name) for record in City.query.all()
-    ])
-    body = TextAreaField('Сообщение', validators=[DataRequired(), Length(min=0, max=256, message="Не более 250 символов.")])
+    phone = StringField('Телефон:', validators=[DataRequired()])
+    city = SelectField('Город:', validators=[DataRequired()], coerce=int)
+    body = TextAreaField('Сообщение:', validators=[DataRequired(), Length(min=0, max=256, message="Не более 250 символов.")])
     submit = SubmitField('Отправить')
     
 

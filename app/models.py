@@ -1,9 +1,11 @@
 from datetime import datetime
 from app import db
 
+from flask_security import UserMixin, RoleMixin
+
 class Service(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    # Желательно добавить slug
+    slug = db.Column(db.String(64), nullable=False, unique=True)
     title = db.Column(db.String(64), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     image = db.Column(db.String(256))
@@ -35,3 +37,21 @@ class Message(db.Model):
 
     def __repr__(self):
         return '{}: {}'.format(self.author, self.phone)
+
+# Flask Security #
+roles_users = db.Table('roles_users',
+        db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
+        db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
+    )
+
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer(), primary_key=True)
+    email = db.Column(db.String(100), unique=True)
+    password = db.Column(db.String(255))
+    active = db.Column(db.Boolean())
+    roles = db.relationship('Role', secondary=roles_users, backref=db.backref('users', lazy='dynamic'))
+
+class Role(db.Model, UserMixin):
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(100), unique=True)
+    description = db.Column(db.String(255))
