@@ -6,6 +6,8 @@ from flask import redirect, url_for, request
 
 from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
+from flask_admin.contrib.fileadmin import FileAdmin
+import os.path as op
 
 from flask_security import SQLAlchemyUserDatastore
 from flask_security import Security
@@ -41,10 +43,17 @@ class CityAdminView(AdminMixin, ModelView):
 class ServiceAdminView(AdminMixin, ModelView):
     pass
 
+class FileAdminView(AdminMixin, FileAdmin):
+    pass
+
+path = op.join(op.dirname(__file__), 'static', 'images')
+
 admin = Admin(app, 'FlaskApp', url='/', index_view=HomeAdminView(name='Home'))
+
 admin.add_view(MessageAdminView(Message, db.session))
 admin.add_view(ServiceAdminView(Service, db.session))
 admin.add_view(CityAdminView(City, db.session))
+admin.add_view(FileAdminView(path, name='Static Files'))
 
 # Security #
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
