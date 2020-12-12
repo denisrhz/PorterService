@@ -48,24 +48,29 @@
     <div class="container">
         <div class="stat">
             <div class="stat__item">
-                <div class="stat__count">42</div>
-                <div class="stat__text">Web Design Projects</div>
+                <div class="stat__text">Более</div>
+                <div class="stat__count">8</div>
+                <div class="stat__text">Лет на рынке</div>
             </div>
             <div class="stat__item">
-                <div class="stat__count">123</div>
-                <div class="stat__text">happy client</div>
+                <div class="stat__text">Уже</div>
+                <div class="stat__count">3427</div>
+                <div class="stat__text">Довольных клиентов</div>
             </div>
             <div class="stat__item">
-                <div class="stat__count">15</div>
-                <div class="stat__text">award winner</div>
+                <div class="stat__text">Более</div>
+                <div class="stat__count">400</div>
+                <div class="stat__text">Сотрудников</div>
             </div>
             <div class="stat__item">
-                <div class="stat__count">99</div>
-                <div class="stat__text">cup of coffee</div>
+                <div class="stat__text">Работаем в</div>
+                <div class="stat__count">10</div>
+                <div class="stat__text">Городах</div>
             </div>
             <div class="stat__item">
-                <div class="stat__count">24</div>
-                <div class="stat__text">members</div>
+                <div class="stat__text">Обслуживаем</div>
+                <div class="stat__count">46</div>
+                <div class="stat__text">Крупных компаний</div>
             </div>
         </div>
     </div>
@@ -84,10 +89,10 @@
             <div class="service__item">
                 <div class="service__header">
                     <a href="#">
-                        <img class="service__photo" src="{{ url_for('static', filename = 'images/service/1.jpg') }}" alt="">
+                        <img class="service__photo" src="{{ url_for('static', filename = 'images/service/{}'.format(service.image)) }}" alt="">
                     </a>
                     <div class="service__date">
-                        {{ service.price }} <i class="fas fa-ruble-sign"></i>
+                        <i>ОТ</i> {{ service.price }} <i class="fas fa-ruble-sign"></i>
                     </div>
                 </div>
                 <div class="service__content">
@@ -101,7 +106,7 @@
                 <div class="service__footer">
                     <div class="service-stat">
                         <div class="service__title">
-                            <a href="{{ url_for('message', service=service.id) }}">Узнать стоимость</a>
+                            <a href="{{ url_for('message', service=service.slug) }}">Узнать стоимость</a>
                         </div>
                     </div>
                 </div>
@@ -124,7 +129,7 @@
                     <div class="reviews__item">
                         <img class="reviews__photo" src="{{ url_for('static', filename = 'images/reviews/1.png') }}" alt="">
                         <div class="reviews__text">“Заказала грузоперевозку, перевозили пианино с адреса на адрес. Приехали крепкие, слаженные ребята с ремнями, Перевезли все! Все понравилось. Не поцарапали, ничего не разбили, сделали все быстро. Ребята приехали чистые, вежливо общались.  ”</div>
-                        <div class="reviews__author">Jon Doe</div>
+                        <div class="reviews__author">Марина</div>
                     </div>
                 </div>
 
@@ -132,7 +137,7 @@
                     <div class="reviews__item">
                         <img class="reviews__photo" src="{{ url_for('static', filename = 'images/reviews/1.png') }}" alt="">
                         <div class="reviews__text">“Заказала грузоперевозку, перевозили пианино с адреса на адрес. Приехали крепкие, слаженные ребята с ремнями, Перевезли все! Все понравилось. Не поцарапали, ничего не разбили, сделали все быстро. Ребята приехали чистые, вежливо общались.  ”</div>
-                        <div class="reviews__author">Jon Doe</div>
+                        <div class="reviews__author">Марина</div>
                     </div>
                 </div>
 
@@ -147,7 +152,7 @@
     <div class="container">
         <div class="message__inner">
             <h4 class="message__title">У вас появился вопрос или коммерческое предложение?</h4>
-            <a class="message__btn" href="#">Написать</a>
+            <a class="message__btn" href="{{ url_for('message', service='commercial') }}">Написать</a>
         </div>
     </div>
 </div>

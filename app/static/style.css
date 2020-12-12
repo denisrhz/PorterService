@@ -15,6 +15,7 @@ ul {
 
 a {
     text-decoration: none;
+    color: ;
 }
 
 *,
@@ -106,7 +107,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .contacts__item--social a i {
-    font-size: 16px;
+    font-size: 19px;
     display: inline-block;
     vertical-align: middle;
     margin-left: 10px;
@@ -736,6 +737,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
     font-size: 14px;
     color: #808080;
+    line-height: 2;
     text-align: center;
 }
 

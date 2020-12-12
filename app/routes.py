@@ -11,13 +11,14 @@ def index():
 
 @app.route('/message/<service>', methods=['GET', 'POST'])
 def message(service):
+    service = Service.query.filter_by(slug=service).first_or_404()
     form = MessageForm()
     form.city.choices = [(record.id, record.name) for record in City.query.all()]
     if form.validate_on_submit():
         message = Message(author=form.author.data,
                             phone=form.phone.data,
                             body=form.body.data,
-                            service_id=service,
+                            service_id=service.id,
                             city_id=form.city.data)
         db.session.add(message)
         db.session.commit()
