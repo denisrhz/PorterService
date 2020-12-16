@@ -32,7 +32,7 @@
             </div>
             <ul class="service__list">
                 {% for service in services %}
-                    <li><a href="{{ url_for('message', service=service.id) }}"><i class="fa fa-check" aria-hidden="true"></i>{{ service.title }}</a></li>
+                    <li><a href="{{ url_for('message', service=service.slug) }}}"><i class="fa fa-check" aria-hidden="true"></i>{{ service.title }}</a></li>
                 {% endfor %}
             </ul>
             <p>На протяжении 5 лет мы обслуживаем склады, производства, торговые сети, мероприятия и любые другие проекты, где требуется профессиональный подход. Каждый день к нам обращаются десятки клиентов за профессиональной помощью для решения своих проблем!</p>

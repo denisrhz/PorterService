@@ -70,7 +70,7 @@
                 <h2 class="footer__title">Услуги</h2>
                 <ul class="service__list">
                     {% for service in services %}
-                        <li><a href="{{ url_for('message', service=service.id) }}"><i class="fa fa-check" aria-hidden="true"></i>{{ service.title }}</a></li>
+                        <li><a href="{{ url_for('message', service=service.slug) }}"><i class="fa fa-check" aria-hidden="true"></i>{{ service.title }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
