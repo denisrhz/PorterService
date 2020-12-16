@@ -22,6 +22,6 @@ def message(service):
                             city_id=form.city.data)
         db.session.add(message)
         db.session.commit()
-        return redirect(url_for('message', service=service))
+        return redirect(url_for('message', service=service.slug))
     return render_template('message.html', form=form)
 
