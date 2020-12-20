@@ -149,7 +149,26 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .menu__logo {
-    padding: 0 15px;
+    padding-left: 60px;
+    margin: 0 10px 0 15px;
+    position: relative;
+}
+
+.logo__image {
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+.logo__title {
+    color: #1e2126;
+    text-transform: uppercase;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 34px;
+}
+
+.logo__title span {
+    color: #ffcd00;
 }
 
 .nav {
