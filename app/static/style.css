@@ -15,7 +15,6 @@ ul {
 
 a {
     text-decoration: none;
-    color: ;
 }
 
 *,
@@ -533,7 +532,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 .reviews__text {
     margin-bottom: 15px;
-    font-size: 22px;
+    font-size: 19px;
     font-style: italic;
     font-weight: 300;
     color: #999;
