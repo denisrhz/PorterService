@@ -93,7 +93,9 @@
                         <img class="service__photo" src="{{ url_for('static', filename = 'images/service/{}'.format(service.image)) }}" alt="">
                     </a>
                     <div class="service__date">
-                        <i>ОТ</i> {{ service.price }} <i class="fas fa-ruble-sign"></i>
+                        <div class="service__date__inner">
+                            <i>ОТ</i> {{ service.price }} <i class="fas fa-ruble-sign"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="service__content">

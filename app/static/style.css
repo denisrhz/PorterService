@@ -437,7 +437,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .service__date {
-    padding: 7px 20px;
+    padding: 7px 18px;
     color: #ffcd00;
     border: 1px solid #ffcd00;
 
@@ -451,11 +451,15 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
     position: absolute;
     bottom: -10px;
-    left: 70%;
+    right: 15px;
     z-index: 1;
 }
 
-.service__date i {
+.service__date__inner {
+    min-width: 60px;
+}
+
+.service__date__inner i {
     font-size: 10px;
     color: #f8f8f8;
 }
