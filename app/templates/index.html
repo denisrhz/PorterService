@@ -36,7 +36,7 @@
                     <li><a href="{{ url_for('message', service=service.slug) }}"><i class="fa fa-check" aria-hidden="true"></i>{{ service.title }}</a></li>
                 {% endfor %}
             </ul>
-            <p>На протяжении 8 лет мы обслуживаем склады, производства, торговые сети, мероприятия и любые другие проекты, где требуется профессиональный подход. Каждый день к нам обращаются десятки клиентов за профессиональной помощью для решения своих проблем!</p>
+            <p>На протяжении 6 лет мы обслуживаем склады, производства, торговые сети, мероприятия и любые другие проекты, где требуется профессиональный подход. Каждый день к нам обращаются десятки клиентов за профессиональной помощью для решения своих проблем!</p>
         </div>
     </div>
         <div class="about__right">
@@ -89,9 +89,9 @@
         {% for service in services %}
             <div class="service__item">
                 <div class="service__header">
-                    <a href="#">
+
                         <img class="service__photo" src="{{ url_for('static', filename = 'images/service/{}'.format(service.image)) }}" alt="">
-                    </a>
+
                     <div class="service__date">
                         <div class="service__date__inner">
                             <i>ОТ</i> {{ service.price }} <i class="fas fa-ruble-sign"></i>
