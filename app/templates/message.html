@@ -12,7 +12,7 @@
             <div class="section__header">
                 <h2 class="section__title">Заказать</h2>
             </div>
-            <form action="" method="post" novalidate>
+            <form class="form-request" action="" method="post" novalidate>
                 {{ form.hidden_tag() }}
                 <div class="form-group row">
                     {{ form.author.label(class="col-sm-4 col-form-label col-form-label-lg") }}
@@ -26,7 +26,7 @@
                 <div class="form-group row">
                     {{ form.phone.label(class="col-sm-4 col-form-label col-form-label-lg") }}
                     <div class="col-sm-8">
-                    {{ form.phone(placeholder="8915912XXXX", class='form-control my-1 mr-sm-2') }}
+                    {{ form.phone(placeholder="Номер телефона", class='phone-field form-control my-1 mr-sm-2') }}
                     </div>
                     {% for error in form.phone.errors %}
                     <div style="color: #ffcd00;">{{ error }}</div>

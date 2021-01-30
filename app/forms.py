@@ -12,9 +12,3 @@ class MessageForm(FlaskForm):
     city = SelectField('Город:', validators=[DataRequired()], coerce=int)
     body = TextAreaField('Сообщение:', validators=[DataRequired(), Length(min=0, max=256, message="Не более 250 символов.")])
     submit = SubmitField('Отправить')
-    
-
-    def validate_phone(self, phone):
-        is_phone = re.match(r"89[0-9]{9}$", phone.data)
-        if is_phone is None:
-            raise ValidationError('Некорректно введен номер телефона.')
