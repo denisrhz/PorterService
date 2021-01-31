@@ -906,6 +906,11 @@ body, p, h1, h2, h3, h4, h5, h6 {
         display: none;
     }
 
+    /* Menu */
+    .menu__inner {
+        padding: 15px 0;
+    }
+
     /* Stat */
     .stat__item {
         width: 100%;
