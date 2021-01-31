@@ -717,13 +717,22 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 .footer__contacts__li {
     display: table;
-    color: #808080;
     line-height: 1.5;
     margin-bottom: 15px;
+    color: #808080;
     transition: color 300ms linear 0s;
 }
 
 .footer__contacts__li:hover {
+    color: #ffcd00;
+}
+
+.footer__contacts__phone {
+    color: #808080;
+    transition: color 300ms linear 0s;
+}
+
+.footer__contacts__phone:hover {
     color: #ffcd00;
 }
 
