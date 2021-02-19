@@ -96,6 +96,10 @@ body, p, h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
 }
 
+.contacts__phone__link {
+    text-decoration: underline;
+}
+
 .contacts__item i {
     position: absolute;
     left: -70px;
@@ -729,6 +733,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .footer__contacts__phone {
+    text-decoration: underline;
     color: #808080;
     transition: color 300ms linear 0s;
 }
