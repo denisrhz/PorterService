@@ -145,7 +145,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .menu__inner {
-    padding: 20px 0;
+    padding: 5px 0;
     margin: 0 -15px;
     display: flex;
     justify-content: space-between;
@@ -213,7 +213,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 
     position: absolute;
-    top: 34px;
+    top: 24px;
     right: 25px;
     z-index: 1;
 }
@@ -277,7 +277,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
 /* About */
 .about {
-    margin-top: 90px;
+    margin-top: 65px;
     overflow: hidden;
     background: #1e2126;
 }
@@ -914,7 +914,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
     /* Menu */
     .menu__inner {
-        padding: 15px 0;
+        padding: 6px 0;
     }
 
     /* Stat */
