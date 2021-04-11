@@ -90,7 +90,10 @@
             <div class="service__item">
                 <div class="service__header">
 
+                        
+                    <a href="{{ url_for('message', service=service.slug) }}">
                         <img class="service__photo" src="{{ url_for('static', filename = 'images/service/{}'.format(service.image)) }}" alt="">
+                    </a>
 
                     <div class="service__date">
                         <div class="service__date__inner">
